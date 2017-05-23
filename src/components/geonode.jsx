@@ -59,7 +59,8 @@ class GeoNodeViewer extends React.Component {
       errors: [],
       errorOpen: false
     };
-    this._local = getLocalGeoServer(props.config.sources, props.baseUrl);
+    console.log('props, props.baseUrl: ', props, props.baseUrl);
+    // this._local = getLocalGeoServer(props.config.sources, props.baseUrl);
   }
   getChildContext() {
     return {
@@ -151,7 +152,7 @@ class GeoNodeViewer extends React.Component {
         <div id='globe-button'><Globe tooltipPosition='right' map={map} /></div>
         <div id='print-button'><QGISPrint menu={false} map={map} layouts={this.props.printLayouts} /></div>
         <div id='home-button'><HomeButton extent={this._extent} tooltipPosition='right' map={map} /></div>
-        <div id='home-button'><LayerList showZoomTo={true} addBaseMap={{tileServices: this.state.tileServices}} addLayer={layerList} showTable={true} allowReordering={true} includeLegend={true} allowRemove={this.edit} tooltipPosition='left' allowStyling={this.edit || this.props.zoomToLayer} map={map} /></div>
+        <div id='layer-switcher'><LayerList showZoomTo={true} addBaseMap={{tileServices: this.state.tileServices}} addLayer={layerList} showTable={true} allowReordering={true} includeLegend={true} allowRemove={this.edit} tooltipPosition='left' allowStyling={this.edit || this.props.zoomToLayer} map={map} /></div>
         <div id='zoom-buttons'><Zoom tooltipPosition='right' map={map} /></div>
         <div id='rotate-button'><Rotate autoHide={true} tooltipPosition='right' map={map} /></div>
         <div id='popup' className='ol-popup'><InfoPopup toggleGroup='navigation' toolId='nav' infoFormat='application/vnd.ogc.gml' map={map} /></div>
