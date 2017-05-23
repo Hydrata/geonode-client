@@ -66,6 +66,11 @@ html, body {
   margin-left: 20px;
   top: 189px;
 }
+#layer-switcher {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
 .layer-switcher {
   top: 20px !important;
 }
