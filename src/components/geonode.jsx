@@ -46,9 +46,18 @@ addLocaleData(
 var map = new ol.Map({
   controls: [new ol.control.Attribution({collapsible: false}), new ol.control.ScaleLine()],
   layers: [
-    new ol.layer.Tile({title: 'OSM Streets', type: 'base', source: new ol.source.OSM()})
+    new ol.layer.Tile({
+      title: 'Bing Aerial',
+      type: 'base',
+      // preload: Infinity,
+      opacity: 0.5,
+      source: new ol.source.BingMaps({
+        key: 'ApCiIdI8N4-OPZRLbs6Nt2FZjK-wr0lRmx1hiZH5iPZAnn3VfmEnEqWJSTnABYt4',
+        imagerySet: 'Aerial'
+      })
+    })
   ],
-  view: new ol.View({center: [0, 0], zoom: 3})
+  view: new ol.View({center: [0, 0], zoom: 5})
 });
 
 class GeoNodeViewer extends React.Component {
@@ -59,8 +68,8 @@ class GeoNodeViewer extends React.Component {
       errors: [],
       errorOpen: false
     };
-    console.log('props, props.baseUrl: ', props, props.baseUrl);
-    // this._local = getLocalGeoServer(props.config.sources, props.baseUrl);
+    console.log('1 props, props.baseUrl: ', props, props.baseUrl);
+    this._local = getLocalGeoServer(props.config.sources, props.baseUrl);
   }
   getChildContext() {
     return {

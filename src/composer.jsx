@@ -13,6 +13,7 @@ const store = configureStore();
 
 class Composer {
   constructor(domId, options) {
+    console.log('composer.jsx options:', options);
     this._domId = domId;
     this._mapConfig = options.mapConfig;
     this._server = options.server;

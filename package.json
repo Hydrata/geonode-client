@@ -2,7 +2,7 @@
   "name": "geonode-viewer",
   "version": "0.0.23",
   "scripts": {
-    "start": "mkdir -p dist && node_modules/.bin/webpack-dev-server --progress --colors --hot --inline",
+    "start": "mkdir -p dist && node_modules/.bin/webpack-dev-server --progress --colors --port 3000 --hot --host 0.0.0.0 --inline",
     "build:js": "webpack",
     "build:gh-copy": "cp index-gh.html _build/index.html && cp dist/viewer.js _build/js/app.js && cp dist/composer.js _build/js/composer.js && cp -R resources/ol3-cesium/* _build/js/cesium/ && cp CNAME _build/CNAME && cp index-composer.html _build/composer/index.html",
     "build:gh-clean": "rm -rf _build/* ",

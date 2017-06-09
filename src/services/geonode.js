@@ -50,6 +50,7 @@ export const login = (server, username, password) => {
 }
 
 export const getLocalGeoServer = (sources, baseUrl) => {
+  console.log("getLocalGeoServer");
   for (var key in sources) {
     var source = sources[key];
     if (source.ptype === 'gxp_wmscsource' && source.url.indexOf(baseUrl) === 0 && source.url.indexOf('access_token') !== -1) {
