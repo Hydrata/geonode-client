@@ -69,7 +69,8 @@ class GeoNodeViewer extends React.Component {
       errorOpen: false
     };
     console.log('1 props, props.baseUrl: ', props, props.baseUrl);
-    this._local = getLocalGeoServer(props.config.sources, props.baseUrl);
+    // this._local = getLocalGeoServer(props.config.sources, props.baseUrl);
+    // testing geonode deploy1
   }
   getChildContext() {
     return {
